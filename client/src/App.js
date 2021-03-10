@@ -1,25 +1,26 @@
-
-import React from 'react';
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
-import Homepage from "./pages/Homepage";
-import SavedBooksPage from "./pages/SavedBooks"
-
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from "./pages/Homepage";
+import SavedBooksPage from "./pages/SavedBooks";
+import Nav from "./components/Navbar/navbar";
+import Header from "./components/Header"
 
 function App() {
   return (
     <Router>
       <div>
         <Switch>
-          <Route exact path="/" conponent={Homepage} />
-          <Route exact path="/savedbooks" conponent={SavedBooksPage}/>
+          <Nav />
+      <Header />
+          <Route exact path="/searchforbooks" component={Home} />
+          <Route exact path="/savedbooks" component={SavedBooksPage} />
         </Switch>
       </div>
     </Router>
-  )
+  );
   // const [book, setBook] = useState("");
   // const [result, setResult] = useState([]);
   // const [apiKey, setApiKey] = useState("AIzaSyAmukOX6JHM53iVJC7RJzMP-lGFQSiJ618");
-
 
   // function handleChange(event){
   //   const book = event.target.value;
@@ -38,16 +39,15 @@ function App() {
 
   // return (
 
-    
   //   <div className="container" >
   //     <h1>Google Book Search </h1>
   //     <Header />
-  //     <form onSubmit={handleSubmit}> 
+  //     <form onSubmit={handleSubmit}>
   //       <div class="form-group">
-  //         <input 
+  //         <input
   //         type="text" onChange={handleChange}
-  //         className="form-control mt-10" 
-  //         placeholder="Search for books" 
+  //         className="form-control mt-10"
+  //         placeholder="Search for books"
   //         autoComplete="off"
   //         />
   //         </div>
@@ -62,10 +62,8 @@ function App() {
   //      )
   //       )}
   //   </div>
-    
-  
+
   // );
 }
-
 
 export default App;
