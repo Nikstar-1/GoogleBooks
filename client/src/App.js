@@ -9,9 +9,9 @@ function App() {
   return (
     <Router>
       <div>
+        <Nav />
+        <Header />
         <Switch>
-          <Nav />
-      <Header />
           <Route exact path="/searchforbooks" component={Home} />
           <Route exact path="/savedbooks" component={SavedBooksPage} />
         </Switch>
