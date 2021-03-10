@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require('mongoose');
-const routes = require("./server/node_modules/node_modules/.routes/"); 
+// const routes = require("./server/node_modules/node_modules/.routes/"); 
+const routes = require("./routes/api")
 
 const app = express();
 var PORT = process.env.PORT || 3000;
@@ -16,7 +17,10 @@ app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "./client/build/index.html"));
   });
   
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks", {
+   useUnifiedTopology: true,
+   useNewUrlParser: true
+});
 
 
 app.listen(PORT, function () {
