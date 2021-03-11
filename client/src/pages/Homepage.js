@@ -1,15 +1,16 @@
 import React, { Component } from "react";
 import API from "../utils/api";
 
-// class Homepage extends Component {
-// //   state = {
-// //     books: [],
-// //     search: "",
-// //   };
 
-// //   getSearchedBooks = () => {
-// //     API.getSearchedBooks(this.state.search).then((response) => this.setState({ books: response.data }));
-// //   };
+// class Homepage extends Component {
+ //  state = {
+ //   books: [],
+ //    search: "",
+ // };
+
+  //getSearchedBooks = () => {
+  //  API.getSearchedBooks(this.state.search).then((response) => this.setState({ books: response.data }));
+  // };
 //   render() {
 //     return (
 //       <div>
@@ -23,6 +24,15 @@ import API from "../utils/api";
 import { Link } from "react-router-dom";
 
 class Homepage extends Component {
+  state = {
+    books: [],
+     search: "",
+  };
+
+  getSearchedBooks = () => {
+    API.getSearchedBooks(this.state.search).then((response) => this.setState({ books: response.data, search: "" }));
+   };
+
   render() {
     return (
       <div>
@@ -32,7 +42,8 @@ class Homepage extends Component {
         </nav>
 
         <h1>HEY</h1>
-        <button onclick={this.getSearchedBooks}></button>
+        <button onClick={this.getSearchedBooks}></button>
+    
       </div>
     );
   }
