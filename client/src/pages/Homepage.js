@@ -28,9 +28,15 @@ class Homepage extends Component {
     books: [],
      search: "",
   };
-
+   handleChange = (event) => {
+      const book = event.target.value;
+      console.log(book)
+      this.setState({...this.state, search: book});
+  
+    }
   getSearchedBooks = () => {
-    API.getSearchedBooks(this.state.search).then((response) => this.setState({ books: response.data, search: "" }));
+    console.log(this.state)
+    API.getSearchedBooks(this.state.search).then((response) => this.setState({ books: response.data.items, search: "" }));
    };
 
   render() {
@@ -42,7 +48,20 @@ class Homepage extends Component {
         </nav>
 
         <h1>HEY</h1>
+        <input
+          type="text" onChange={this.handleChange}
+          
+           placeholder="Search for books"
+          autoComplete="off"
+           />
         <button onClick={this.getSearchedBooks}></button>
+        {this.state.books.map(book => (
+         <a href={book.volumeInfo.previewLink}>
+          <img src={book.volumeInfo.imageLinks.thumbnail} alt={book.title}/>
+          console.log(book)
+          </a>
+        )
+         )}
     
       </div>
     );

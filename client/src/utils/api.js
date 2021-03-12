@@ -1,7 +1,7 @@
 import axios from "axios"; 
 
 export default {
-    getSearchedBooks: (search) => {
-        return axios.get("/api/google", {params: {search: "title:" + search}});
+    getSearchedBooks: (search = "red") => {
+        return axios.get("https://www.googleapis.com/books/v1/volumes?q=" + search + "&key=" + "AIzaSyAmukOX6JHM53iVJC7RJzMP-lGFQSiJ618" + "&maxResults=40")
     },
 }
