@@ -30,7 +30,6 @@ class Homepage extends Component {
   };
    handleChange = (event) => {
       const book = event.target.value;
-      console.log(book)
       this.setState({...this.state, search: book});
   
     }
@@ -41,24 +40,23 @@ class Homepage extends Component {
 
   render() {
     return (
-      <div>
+      <div className="card mb-3">
         <nav>
           <Link to="/">Home</Link>
           <Link to="savedbooks">View Saved</Link>
         </nav>
-
-        <h1>HEY</h1>
         <input
           type="text" onChange={this.handleChange}
-          
+          className="form-control mt-10"
            placeholder="Search for books"
           autoComplete="off"
+          
            />
-        <button onClick={this.getSearchedBooks}></button>
+         <button onClick={this.getSearchedBooks} type="submit" className="btn btn-info">Search</button>
+
         {this.state.books.map(book => (
          <a href={book.volumeInfo.previewLink}>
           <img src={book.volumeInfo.imageLinks.thumbnail} alt={book.title}/>
-          console.log(book)
           </a>
         )
          )}
