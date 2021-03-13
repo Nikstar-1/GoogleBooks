@@ -3,6 +3,7 @@ import API from "../utils/api";
 import CardDisplay from "../components/CardDisplay";
 
 
+
 // class Homepage extends Component {
 //  state = {
 //   books: [],
@@ -49,23 +50,24 @@ class Homepage extends Component {
         <button onClick={this.getSearchedBooks} type="submit" className="btn btn-info">
           Search
         </button>
-        
-        <CardDisplay 
-         id={book.volumeInfo.id} 
-         key={book.volumeInfo.id} 
-         title={book.volumeInfo.title} 
-         description={book.volumeInfo.description} 
-         image={book.volumeInfo.imageLinks.thumbnail} 
-         link={book.volumeInfo.infoLink} 
-         handleClick={this.handleBookClick}
-      
-        />
+       
         {this.state.books.map((book, i) => {
           const key = i;
           return (
+            <>
+              <CardDisplay 
+                id={book.volumeInfo.id} 
+                key={book.volumeInfo.id} 
+                title={book.volumeInfo.title} 
+                description={book.volumeInfo.description} 
+                image={book.volumeInfo.imageLinks.thumbnail} 
+                link={book.volumeInfo.infoLink} 
+                handleClick={this.handleBookClick}
+              />
             <a href={book.volumeInfo.previewLink} key={key}>
               <img src={book.volumeInfo.imageLinks.thumbnail} alt={book.title} />
             </a>
+            </>
           );
         })}
       </div>
