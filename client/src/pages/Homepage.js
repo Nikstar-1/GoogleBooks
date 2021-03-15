@@ -36,9 +36,10 @@ class Homepage extends Component {
   };
   getSearchedBooks = () => {
     console.log(this.state);
-    API.getSearchedBooks(this.state.search).then((response) => this.setState({ books: response.data.items, search: "" }));
+    API.getSearchedBooks(this.state.search).then((response) => this.setState({ books: response.data.items, search: "" })).then (() => console.log(this.state.books));
   };
-
+ 
+ 
   render() {
     return (
       <div className="container-fluid">
@@ -52,6 +53,7 @@ class Homepage extends Component {
         </button>
        
         {this.state.books.map((book, i) => {
+         
           const key = i;
           return (
             <>
@@ -60,13 +62,13 @@ class Homepage extends Component {
                 key={book.volumeInfo.id} 
                 title={book.volumeInfo.title} 
                 description={book.volumeInfo.description} 
-                image={book.volumeInfo.imageLinks.thumbnail} 
+                // image={book.volumeInfo.imageLinks.thumbnail} 
                 link={book.volumeInfo.infoLink} 
                 handleClick={this.handleBookClick}
               />
-            <a href={book.volumeInfo.previewLink} key={key}>
+            {/* <a href={book.volumeInfo.previewLink} key={key}>
               <img src={book.volumeInfo.imageLinks.thumbnail} alt={book.title} />
-            </a>
+            </a> */}
             </>
           );
         })}
