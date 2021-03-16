@@ -1,28 +1,6 @@
 import React, { Component } from "react";
 import API from "../utils/api";
 import CardDisplay from "../components/CardDisplay";
-
-
-
-// class Homepage extends Component {
-//  state = {
-//   books: [],
-//    search: "",
-// };
-
-//getSearchedBooks = () => {
-//  API.getSearchedBooks(this.state.search).then((response) => this.setState({ books: response.data }));
-// };
-//   render() {
-//     return (
-//       <div>
-//           <h1>HEY</h1>
-//         {/* <button onclick={this.getSearchedBooks}></button> */}
-//       </div>
-//     );
-//   }
-// }
-
 import { Link } from "react-router-dom";
 
 class Homepage extends Component {
@@ -36,8 +14,20 @@ class Homepage extends Component {
   };
   getSearchedBooks = () => {
     console.log(this.state);
-    API.getSearchedBooks(this.state.search).then((response) => this.setState({ books: response.data.items, search: "" })).then (() => console.log(this.state.books));
+    API.getSearchedBooks(this.state.search).then((response) => this.setState({ books: response.data.items})).then (() => console.log(this.state.books));
   };
+  handleSave = id => {
+    const bookToBeSaved = this.state.books.find(book => book.id === id)
+
+    API.saveDbBook({
+      _id: bookToBeSaved.id,
+      title: bookToBeSaved.volumeInfo.title,
+      authors: bookToBeSaved.volumeInfo.authors,
+      description: bookToBeSaved.volumeInfo.description,
+      // image: bookToBeSaved.volumeInfo.imageLinks.thumbnail,
+      link: bookToBeSaved.volumeInfo.infoLink,
+    }).then(() => {return null})
+  }
  
  
   render() {
@@ -52,29 +42,33 @@ class Homepage extends Component {
           Search
         </button>
        
-        {this.state.books.map((book, i) => {
-         
-          const key = i;
-          return (
-            <>
-              <CardDisplay 
-                id={book.volumeInfo.id} 
-                key={book.volumeInfo.id} 
-                title={book.volumeInfo.title} 
-                description={book.volumeInfo.description} 
-                // image={book.volumeInfo.imageLinks.thumbnail} 
-                link={book.volumeInfo.infoLink} 
-                handleClick={this.handleBookClick}
-              />
-            {/* <a href={book.volumeInfo.previewLink} key={key}>
-              <img src={book.volumeInfo.imageLinks.thumbnail} alt={book.title} />
-            </a> */}
-            </>
-          );
-        })}
+        {this.state.books.map(book => {
+          return(
+
+            
+            
+            
+            <CardDisplay 
+            id={book.id} 
+            key={book.id} 
+            title={book.volumeInfo.title} 
+            description={book.volumeInfo.description} 
+            //image={book.volumeInfo.imageLinks.thumbnail} 
+            link={book.volumeInfo.infoLink} 
+            Button={() => {
+              <button onClick={() => this.handleSave(book.id)}>Save Book</button>
+            }}
+            />
+            )
+        })},
+              
+            
+            
+          
+        
       </div>
       
     );
-  }
+      }
 }
 export default Homepage;

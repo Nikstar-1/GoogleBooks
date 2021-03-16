@@ -8,21 +8,20 @@ const styles = {
   },
 };
 
-function CardDisplay(props) {
+function CardDisplay({id, title, authors, link, image, description, Button}) {
   return (
-    <div className="card" id={props.id} key={props.id}>
+    <div className="card" id={id} key={id}>
       <div className="img-container">
-        <h5>{props.title}</h5>
-        <h6>{props.authors}</h6>
-
-        <a href={props.link}>
-          <img alt={props.title} src={props.image} style={styles.image} />
+        <h5>{title}</h5>
+        <h6>{authors}</h6>
+      <Button />
+        <a href={link}>
+          <img alt={title} src={image} style={styles.image} />
         </a>
         <p>
-          <a href={props.link}>View Book</a>
+          <a href={link}>View Book</a>
         </p>
-        <p onClick={() => props.handleSaveClick(props)}>Save Book</p>
-        <p>{props.description}</p>
+        <p>{description}</p>
       </div>
     </div>
   );
