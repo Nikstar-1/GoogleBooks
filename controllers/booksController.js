@@ -9,7 +9,6 @@ module.exports = {
           create: (req,res) => {
               dbBookModel.Book.create(req.body).then(bookCreated => res.json(bookCreated))
           },
-
     //function for creating a new saved book in the cb
         findById: (req, res) =>{
             dbBookModel.Book.findById(req.params.id).then(book => res.json(book))
