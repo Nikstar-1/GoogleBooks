@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {Link} from 'react-router-dom';
 import API from "../utils/api";
 import CardDisplay from "../components/CardDisplay";
-import List  from "../components/List";
+import { List } from "../components/List";
 class SavedBooks extends Component {
     state = {
         books: [],

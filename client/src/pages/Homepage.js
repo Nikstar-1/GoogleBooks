@@ -92,7 +92,7 @@ class Homepage extends Component {
             })}
           </List>
         ) : (
-          <h3>Enter a book</h3>
+          <h3>Enter a book, and save for later!</h3>
         )}
       </div>
     );

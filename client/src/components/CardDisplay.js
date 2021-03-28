@@ -1,5 +1,5 @@
 import React from "react";
-import CardListItem from "./List";
+import { CardListItem } from "./List";
 import API from "../utils/api";
 const saveit = async () => {
   console.log("saving ");

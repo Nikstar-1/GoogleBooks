@@ -1,12 +1,19 @@
 import React from "react";
 import bookSvg from "../open-book.svg";
+
+import background from "./images/bookslibrary.jpeg";
+
 const Header = () => {
   return (
      <div>
       <div
        className="jumbotron jumbotron-fluid"
        style={{ backgroundColor: "#F0F8FF", color: "#00BFFF"}}
+       
        >
+          <div style={{ backgroundImage: `url(${background})` }}>
+      Hello World
+    </div>
         <div className="container">
         <div className="row">
         <div className="col-8 mx-auto col-md-4 order-md-1 col-lg-5">
