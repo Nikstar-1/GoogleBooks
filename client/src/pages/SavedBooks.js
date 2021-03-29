@@ -1,20 +1,20 @@
-import React, {Component} from 'react'
-import {Link} from 'react-router-dom';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import API from "../utils/api";
 import CardDisplay from "../components/CardDisplay";
 import { List } from "../components/List";
 class SavedBooks extends Component {
-    state = {
-        books: [],
-      };
-      async componentDidMount() {
-        const allbooks = await (await API.getAllBooks()).data;
-        this.setState({ books: allbooks });
-        console.log(this.state.books);
-      }
-render() {
+  state = {
+    books: [],
+  };
+  async componentDidMount() {
+    const allbooks = await (await API.getAllBooks()).data;
+    this.setState({ books: allbooks });
+    console.log(this.state.books);
+  }
+  render() {
     return (
-        <div>
+      <div>
         {this.state.books.length ? (
           <List>
             {this.state.books.map((book, i, array) => {
@@ -43,5 +43,4 @@ render() {
   }
 }
 
-export default SavedBooks
-
+export default SavedBooks;

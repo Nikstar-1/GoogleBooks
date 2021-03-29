@@ -2,7 +2,7 @@ import React from "react";
 import { CardListItem } from "./List";
 import API from "../utils/api";
 const saveit = async () => {
-  console.log("saving ");
+  console.log("saveing ");
 };
 const handleSave = async (id, booksArray) => {
   const bookToBeSaved = booksArray.find((book) => book.id === id);
@@ -29,7 +29,7 @@ function CardDisplay({ id, title, authors, link, image, description, Button, boo
             <a href={link}>
               <img alt={title} src={image} />
             </a>
-            
+
             <p>{description}</p>
 
             <a href={link}>
@@ -50,7 +50,7 @@ function CardDisplay({ id, title, authors, link, image, description, Button, boo
           </div>
         </div>
       </div>
-     </CardListItem>
+    </CardListItem>
   );
 }
 

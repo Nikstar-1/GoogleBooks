@@ -10,10 +10,7 @@ class Navbar extends Component {
       //     <Link to="savedbooks" style= {{color: "#00BFFF", fontSize: "25px"}}>View Saved</Link>
       // </nav>
 
-      <nav
-        className="navbar navbar-expand-lg "
-        style={{ backgroundColor: "#ADD8E6" }}
-      >
+      <nav className="navbar navbar-expand-lg " style={{ backgroundColor: "#ADD8E6" }}>
         {/* <a className="navbar-brand" href="#">
           Navbar
         </a> */}

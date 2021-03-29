@@ -48,16 +48,12 @@ class Homepage extends Component {
             type="text"
             onChange={this.handleChange}
             className="form-control"
-            placeholder="Search for books"
+            placeholder="Search books"
             aria-label="Recipient's username"
             aria-describedby="basic-addon2"
           />
           <div className="input-group-append">
-            <button 
-            onClick={this.getSearchedBooks} 
-            type="submit" 
-            className="input-group-text"
-            >
+            <button onClick={this.getSearchedBooks} type="submit" className="input-group-text">
               Search
             </button>
           </div>
@@ -92,7 +88,7 @@ class Homepage extends Component {
             })}
           </List>
         ) : (
-          <h3>Enter a book, and save for later!</h3>
+          <h3>Enter a book</h3>
         )}
       </div>
     );
