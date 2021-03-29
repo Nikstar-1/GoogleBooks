@@ -1,9 +1,9 @@
 import React from "react";
 
 export const List = ({ children }) => {
-  <ul>{children}</ul>;
+  return <ul className="list-group list-group-flush">{children}</ul>;
 };
 
 export function CardListItem({ children }) {
-  return <li>{children}</li>;
+  return <li className="list-group-item">{children}</li>;
 }

@@ -10,7 +10,7 @@ class SavedBooks extends Component {
   async componentDidMount() {
     const allbooks = await (await API.getAllBooks()).data;
     this.setState({ books: allbooks });
-    console.log(this.state.books);
+    console.log("data of allbooks ",allbooks);
   }
   render() {
     return (

@@ -15,11 +15,11 @@ const deleteDbBook = async (id) => {
   return await axios.delete("/api/books/" + id);
 };
 const saveDbBook = async (book) => {
-  return await axios.post("http://localhost:8080/api/books", book);
+  return await axios.post("/api/books", book);
 };
 
 const getAllBooks = async () => {
-  return await axios.get("http://localhost:8080/api/books");
+  return await axios.get("/api/books");
 };
 
 //eslint-disable-next-line import/no-anonymous-default-export

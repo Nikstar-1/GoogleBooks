@@ -21,7 +21,8 @@ class Homepage extends Component {
     const SearchedBooks = await API.getSearchedBooks(this.state.search);
     console.log(SearchedBooks);
     this.setState({ books: SearchedBooks.data.items });
-    return true;
+    console.log(SearchedBooks)
+  
   };
   handleSave = async (id, booksArray) => {
     const bookToBeSaved = this.state.books.find((book) => book.id === id);
@@ -53,7 +54,11 @@ class Homepage extends Component {
             aria-describedby="basic-addon2"
           />
           <div className="input-group-append">
-            <button onClick={this.getSearchedBooks} type="submit" className="input-group-text">
+            <button
+              onClick={this.getSearchedBooks}
+              type="submit"
+              className="input-group-text"
+            >
               Search
             </button>
           </div>

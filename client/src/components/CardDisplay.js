@@ -17,7 +17,17 @@ const handleSave = async (id, booksArray) => {
   });
   console.log(resp);
 };
-function CardDisplay({ id, title, authors, link, image, description, Button, bookArray, showSave }) {
+function CardDisplay({
+  id,
+  title,
+  authors,
+  link,
+  image,
+  description,
+  Button,
+  bookArray,
+  showSave,
+}) {
   return (
     <CardListItem>
       <div className="card" id={id} key={id}>

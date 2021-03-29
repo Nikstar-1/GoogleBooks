@@ -10,7 +10,10 @@ class Navbar extends Component {
       //     <Link to="savedbooks" style= {{color: "#00BFFF", fontSize: "25px"}}>View Saved</Link>
       // </nav>
 
-      <nav className="navbar navbar-expand-lg " style={{ backgroundColor: "#ADD8E6" }}>
+      <nav
+        className="navbar navbar-expand-lg "
+        style={{ backgroundColor: "#ADD8E6" }}
+      >
         {/* <a className="navbar-brand" href="#">
           Navbar
         </a> */}
@@ -29,16 +32,16 @@ class Navbar extends Component {
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
-              <Link to="searchforbooks">
+              <Link to="/">
                 <li className="nav-item active">
-                  <a className="nav-link" href="/searchforbooks">
+                  <a className="nav-link" >
                     Home <span className="sr-only">(current)</span>
                   </a>
                 </li>
               </Link>
-              <Link to="savedbooks">
+              <Link to="/savedbooks">
                 <li className="nav-item">
-                  <a className="nav-link" href="/savedbooks">
+                  <a className="nav-link">
                     View Saved
                   </a>
                 </li>
