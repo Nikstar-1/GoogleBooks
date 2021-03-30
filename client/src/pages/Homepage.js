@@ -33,7 +33,7 @@ class Homepage extends Component {
       authors: bookToBeSaved.volumeInfo.authors,
       description: bookToBeSaved.volumeInfo.description,
       image: bookToBeSaved.volumeInfo.imageLinks.thumbnail,
-      link: bookToBeSaved.volumeInfo.infoLink,
+      link: bookToBeSaved.volumeInfo.previewLink,
     });
   };
 
@@ -82,7 +82,7 @@ class Homepage extends Component {
                   //   let image = book.volumeInfo.imageLinks.thumbnail;
                   //   return image;
                   // })()}
-                  link={book.volumeInfo.infoLink}
+                  link={book.volumeInfo.previewLink}
                   bookArray={array}
                   showSave={true}
                   // Button={() => {

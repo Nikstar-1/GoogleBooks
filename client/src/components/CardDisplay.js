@@ -13,7 +13,7 @@ const handleSave = async (id, booksArray) => {
     authors: bookToBeSaved.volumeInfo.authors,
     description: bookToBeSaved.volumeInfo.description,
     image_link: bookToBeSaved.volumeInfo.imageLinks.thumbnail,
-    link: bookToBeSaved.volumeInfo.infoLink,
+    link: bookToBeSaved.volumeInfo.previewLink,
   });
   console.log(resp);
 };
