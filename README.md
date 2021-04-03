@@ -6,9 +6,9 @@ Google Books Search
 Full stack application
 
 
-!["Start Page"](GoogleBooks/client/src/books.png "Start page.")
+!["Start Page"](GoogleBooks/client/src/images/books.png "Start page.")
 
-!["Start Page"](GoogleBooks/client/src/books2.png "Start page.")
+!["Start Page"](GoogleBooks/client/src/images/books2.png "Start page.")
 ​
 
 ## Installation and Setup Instructions
