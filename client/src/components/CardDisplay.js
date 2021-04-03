@@ -42,7 +42,7 @@ function CardDisplay({
 
             <p>{description}</p>
 
-            <a href={link}>
+            <a href={link} target="_blank">
               <button className="btn btn-primary mr-3">View Book</button>
             </a>
 

@@ -1,11 +1,15 @@
 import React from "react";
-import bookSvg from "../open-book.svg";
+// import bookSvg from "../open-book.svg";
+
+
 const Header = () => {
   return (
     <div>
       <div
         className="jumbotron jumbotron-fluid"
-        style={{ backgroundColor: "#F0F8FF", color: "#00BFFF" }}
+        // style={{ backgroundColor: "#F0F8FF", color: "#00BFFF" }}
+        style={{ backgroundImage: "url(http://horizonbooks.asia/wp-content/uploads/2017/04/section-image-12.jpg)", backgroundSize: "cover" }}
+        
       >
         <div className="container">
           <div className="row">
@@ -17,7 +21,7 @@ const Header = () => {
               </p>
             </div>
             <div className="col-md-8 order-md-2 col-lg-7 text-center text-md-start">
-              <img width="200" alt="something" src={bookSvg} />
+              {/* <img width="200" alt="something" src={bookSvg} /> */}
               {/* <img src={require('../../mySvgImage.svg').default} alt='mySvgImage' /> */}
               {/* <bookSvg /> */}
             </div>

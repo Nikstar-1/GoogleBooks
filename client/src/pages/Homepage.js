@@ -27,7 +27,7 @@ class Homepage extends Component {
   handleSave = async (id, booksArray) => {
     const bookToBeSaved = this.state.books.find((book) => book.id === id);
 
-    await API.saveDbBook({
+  let SavedBooks =  await API.saveDbBook({
       _id: bookToBeSaved.id,
       title: bookToBeSaved.volumeInfo.title,
       authors: bookToBeSaved.volumeInfo.authors,
@@ -35,6 +35,7 @@ class Homepage extends Component {
       image: bookToBeSaved.volumeInfo.imageLinks.thumbnail,
       link: bookToBeSaved.volumeInfo.previewLink,
     });
+    // console.log("SavedBooks", SavedBooks)
   };
 
   render() {
@@ -93,7 +94,7 @@ class Homepage extends Component {
             })}
           </List>
         ) : (
-          <h3>Enter a book</h3>
+          <h3></h3>
         )}
       </div>
     );

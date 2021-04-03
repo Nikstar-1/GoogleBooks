@@ -12,7 +12,7 @@ class Navbar extends Component {
 
       <nav
         className="navbar navbar-expand-lg "
-        style={{ backgroundColor: "#ADD8E6" }}
+        style={{ backgroundColor: "#e0bb55" }}
       >
         {/* <a className="navbar-brand" href="#">
           Navbar
