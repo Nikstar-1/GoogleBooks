@@ -9,6 +9,7 @@ Full stack application
 !["Start Page"](GoogleBooks/client/src/books.png "Start page.")
 
 !["Start Page"](GoogleBooks/client/src/books2.png "Start page.")
+​
 
 ## Installation and Setup Instructions
 If you'd like to view the app locally, you may clone down this repository. You will need node, npm, and MongoDB installed globally on your machine.
