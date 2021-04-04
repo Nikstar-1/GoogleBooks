@@ -5,10 +5,6 @@ Google Books Search
 
 Full stack application
 
-
-!["Start Page"](GoogleBooks/client/src/images/books.png "Start page.")
-
-!["Start Page"](GoogleBooks/client/src/images/books2.png "Start page.")
 ​
 
 ## Installation and Setup Instructions
@@ -26,6 +22,11 @@ To Visit App:
 
 localhost:3000
 
+## Preview
+
+!["Start Page"](GoogleBooks/client/src/images/books.png "Start page.")
+
+!["Start Page"](GoogleBooks/client/src/images/books2.png "Start page.")
 
 ## How it works
 Users are first directed to the Home page where they can search for any book. Book information is retrived via the publicly available Google Books API.
